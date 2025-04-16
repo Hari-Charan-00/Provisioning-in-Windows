@@ -1,15 +1,15 @@
 Install-Module -Name VMware.PowerCLI -Scope CurrentUser
  
-$esxiHost = "labhost"
-$esxiUser = "root"
-$esxiPassword = "Welcome@1234"
+$esxiHost = ""
+$esxiUser = ""
+$esxiPassword = ""
 Connect-VIServer -Server $esxiHost -User $esxiUser -Password $esxiPassword
  
 $vmName = "TestVM"
 $datastore = "datastore1"
-$networkAdapter = "VM Network"
+$networkAdapter = ""
 $vmHost = Get-VMHost -Name $esxiHost
-$isoPath = "[datastore1] OpsRampGateway.iso"
+$isoPath = ""
  
 New-VM -Name $vmName -VMHost $vmHost -Datastore $datastore -NetworkName $networkAdapter -NumCpu 2 -MemoryGB 4 -DiskGB 40
  
